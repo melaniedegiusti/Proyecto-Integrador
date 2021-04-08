@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Liebre Argentina</title>
+    <!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="../public/stylesheets/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <%- include('../partials/header') %>
+
+    <!-- Banner -->
+	<div class="banner">
+		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+	</div>
+	<!-- /Banner -->
+
+    <!-- Novedades -->
+    <div>
+        <h2> Novededas </h2> 
+        <div class="productos">
+         <% for (let i=0; i< 4; i+=1){ %>
+            <p> nombre: <%= autos[i].nombre %> </p>
+            <p> <img src="<%= autos[i].imagen %>" width="200px" height="180px"> </p>
+            <p> descripcion: <%= autos[i].descripcion %></p>
+            <% } %>
+        </div>
+    </div>
+	<!-- /Novedades -->
+	<!-- Más comentados -->
+	<h2> Mas comentados </h2> 
+	<% for (let i=0;  i<4; i+=1){ %>
+        <p> nombre: <%= autos[i].nombre %> </p>
+        <p><img src="<%= autos[i].imagen %>" width="200px" height="180px"> </p>
+        <p> descripcion: <%= autos[i].descripcion %></p>
+    
+    <% } %>
+	<!-- /Más comentados -->
+</body>
+<!-- footer -->
+<%- include('../partials/footer') %>
+</html>
+
+
+ 
