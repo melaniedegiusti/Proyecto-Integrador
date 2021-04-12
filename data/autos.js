@@ -25,33 +25,47 @@ let autos = {
         imagen: "/images/scirocco.jpg",
         
     },
+    {   
+        id: 5,
+        nombre: "Audi RS7",
+        descripcion: "El Audi RS7 Sportback, después del S7 es la versión más potente del Audi A7. El prominente capó de esta berlina deportiva de cinco puertas esconde un motor V8 TFSI biturbo que entrega 560CV. Todos los Audi RS7 tienen tracción total quattro y cambio automático Tiptronic de ocho velocidades.",
+        imagen: "/images/audi-rs7.jpg",
+
+    },
 ],
 comentarios:[
     {
-        id: 5,
+        id: 6,
         nombre: "Volkswagen Gol",
         descripcion: "Renovado, más moderno y más audaz, pero con la calidad y el confort de siempre. Así es el Gol",
         imagen: "/images/gol.jpg",
     },
     {
-        id: 6,
+        id: 7,
         nombre: "Jeep Patriot",
         descripcion: "El Jeep Patriot (MK74) es un SUV crossover compacto de cinco puertas y motor delantero fabricado y comercializado por Jeep",
         imagen: "/images/patriot.jpg",
     },
     {
-        id: 7,
+        id: 8,
         nombre: "Mercedes Benz a200",
         descripcion: "El Mercedes-Benz Clase A (A 160) es un automóvil de lujo del segmento C,producido por el fabricante alemán Mercedes-Benz desde el año 1997. Es el primer modelo de la marca con tracción delantera, y todos sus motores son de cuatro cilindros en línea. El Clase A tiene su motor en posición delantera transversal, algo también inusual en los modelos de Mercedes-Benz. El Clase A es el modelo de entrada a la marca.",
         imagen: "/images/a200.jpg",
 
     },
     {
-        id: 8,
+        id: 9,
         nombre: "Audi a1",
         descripcion: "El nuevo Audi A1 Sportback redefine el segmento compacto. Su llamativo diseño deportivo caracteriza a la segunda generación del exitoso auto compacto.  Con sus sistemas de infoentretenimiento el A1 Sportback te mantiene siempre conectado.",
         imagen: "/images/audi-a1.jpg",
     },
+    {
+        id: 10,
+        nombre: "Subaru Impresa",
+        descripcion: "El Subaru Impreza es un automóvil de turismo del segmento C producido por el fabricante japonés Subaru desde el año 1992",
+        imagen: "/images/subaru-impresa.jpg",
+    },
+
     ],
 }
 

@@ -4,13 +4,15 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
+  --dark-blue:#031C32;
+  --blue: #0151a7;
+  --light-blue: #458dfa;
   --gray: #666666;
   --light-gray: #ebebeb;
-  --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --black: #000000;
+  --base-font-family: 'Roboto', sans-serif;
+  --header-font: 'Lato'
+   
 }
 
 
@@ -42,7 +44,11 @@ ol {
 a {
   display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color: var(--light-gray);
+}
+
+a h2 {
+  color:black;
 }
 
 figure {
@@ -68,7 +74,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 10px ;
-  background-color: var(--yellow);
+  background-color: var(--dark-blue);
 }
 
 .main-header_home-link,
@@ -154,26 +160,30 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/BMW_CPO_Banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100px;
+  
 }
-
 
 /*====== Products ======*/
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
+  
+  
 }
 .col-12 col-sm-6 col-lg-3{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-evenly;
   gap: 10px;
-    margin: 20px;
+  margin: 20px;
+  
 }
+
+
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
@@ -185,12 +195,13 @@ hr {
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
-  margin: 20px 0;
-  
+  margin: 20px 0px;
 }
 
+
 .product-box a {
-   display: block; 
+   display: block;
+
   
 }
 
@@ -267,7 +278,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color:#031C32;
   padding: 20px 0;
   margin-top: 80px;
 }
@@ -282,13 +293,13 @@ hr {
 }
 
 .footer-data h2 {
-  color: var(--gray);
+  color:white;
   font-size: 2.4em;
   font-weight: 400;
 }
 
 .footer-data p {
-  color: var(--gray);
+  color: white;
   font-size: 1.5em;
   font-weight: 300;
 }
