@@ -42,14 +42,14 @@ comentarios:[
     {
         id: 7,
         nombre: "Mercedes Benz a200",
-        descripcion: "snj jkvdkjabs",
+        descripcion: "El Mercedes-Benz Clase A (A 160) es un automóvil de lujo del segmento C,producido por el fabricante alemán Mercedes-Benz desde el año 1997. Es el primer modelo de la marca con tracción delantera, y todos sus motores son de cuatro cilindros en línea. El Clase A tiene su motor en posición delantera transversal, algo también inusual en los modelos de Mercedes-Benz. El Clase A es el modelo de entrada a la marca.",
         imagen: "/images/a200.jpg",
 
     },
     {
         id: 8,
         nombre: "Audi a1",
-        descripcion: "hjvjhvj",
+        descripcion: "El nuevo Audi A1 Sportback redefine el segmento compacto. Su llamativo diseño deportivo caracteriza a la segunda generación del exitoso auto compacto.  Con sus sistemas de infoentretenimiento el A1 Sportback te mantiene siempre conectado.",
         imagen: "/images/audi-a1.jpg",
     },
     ],
