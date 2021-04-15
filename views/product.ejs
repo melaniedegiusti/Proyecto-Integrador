@@ -21,9 +21,9 @@
 	
 	<!-- product detail -->
 	 <div class="container products-wrapper"> 
-		<% for (let i=0; i<infoAuto.length; i+=1){ %>
+  
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> <%= infoAuto[i].nombre %> </h2> 
+			<h2 class="products-title"> <%= autosid.nombre %> </h2> 
 			<p class="product-detail-description">
 				<a href="product-add.html">Editar</a>
 			</p>
@@ -31,8 +31,8 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="./images/products/default-image.png" alt="" class="product-detail-img">
-					<p class="product-detail-description"> <%= infoAuto[i].descripcion %></p>
+					<img src="<%= autosid.imagen %>" alt="" class="product-detail-img">
+					<p class="product-detail-description"> <%= autosid.descripcion %></p>
 				</article>
 
 				<div class="col-12 col-lg-4">
@@ -89,7 +89,6 @@
 				</div>
 			</div>
 		</div>
-		<% } %>
 	</div> 
 	<!-- /product detail -->
 

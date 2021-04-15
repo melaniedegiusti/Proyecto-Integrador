@@ -6,14 +6,14 @@ let controller = {
     },
     
     id: function(req, res) {
-        let ids = req.params.id
-        let resultados =[]
-        for (let i=0; i<autos.length; i+=1){
-            if(autos[i].id==ids){
+        let ids = req.params.id;
+        let resultados=[];
+        for (let i = 0; i < autos.length; i++){
+            if(autos[i].id == ids){
                 resultados.push(autos[i])
             }
-        }
-        res.render("product", {"autosid": resultados})
+        };
+        res.render("product", {'autosid': resultados})
     },
 };
 
