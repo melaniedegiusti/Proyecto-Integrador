@@ -13,6 +13,7 @@ let controller = {
                 resultados.push(autos[i])
             }
         };
+        console.log(resultados);
         res.render("product", {'autosid': resultados})
     },
 };
