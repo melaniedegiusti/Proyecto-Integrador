@@ -10,6 +10,8 @@ let autosRouter = require('./routes/autos');
 let productRouter = require('./routes/product');
 let registerRouter = require('./routes/register');
 let loginRouter = require('./routes/login');
+let headerLogueadoRouter = require('./routes/headerLogueado');
+let productAddRouter = require('./routes/productAdd');
 var app = express();
 
 // view engine setup
@@ -28,6 +30,8 @@ app.use('/autos', autosRouter);
 app.use('/product', productRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/headerLogueado', headerLogueadoRouter);
+app.use('/productAdd', productAddRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
