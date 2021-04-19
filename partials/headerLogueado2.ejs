@@ -56,7 +56,11 @@
 						</a>
 					</li>
 					<li>
-						<a href="/autos">Cerrar Sesión</a>
+						<form action="" method="post">
+							<button class="logout" type="submit">
+								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+							</button>
+						</form>
 					</li>
 					<!-- Solo deslogueado <li>
 						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
@@ -70,66 +74,6 @@
 		</div>
 	</header>
 	<!-- /Header -->
-	<!-- Banner -->
-	<div class="banner">
-		<!-- <img src="/images/BMW_CPO_Banner.jpg" alt="Banner de ofertas" height="100px"> -->
-	</div>
-	<!-- /Banner -->
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">NOVEDADES</h2>
-			</div>
-			<% for (let i=0; i< 8; i+=1){ %>
-			<div id="separacion" class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product/<%= autosDestacados[i].id %>">
-							<figure class="product-box_image"> 
-								<img src="<%= autosDestacados[i].imagen %>"> 
-							</figure>
-							<article class="product-box_data">
-								<h2> <%= autosDestacados[i].nombre %> </h2>
-								<p> <%= autosDestacados[i].descripcion %></p>
-							</article>
-						
-					</a>
-				</section>
-			</div>
-			<% } %>
-		</div>
-
-	</div>
-
-	<!-- Mas comentados -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">MAS COMENTADOS</h2>
-			</div>
-			<% for (let i=0; i< 4; i+=1){ %>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product/<%= autosComentario[i].id %>">
-							<figure class="product-box_image"> 
-								<img src="<%= autosComentario[i].imagen %>" > 
-							</figure>
-							<article class="product-box_data">
-								<h2> <%= autosComentario[i].nombre %> </h2>
-								<p> <%= autosComentario[i].descripcion %></p>
-							</article>
-					
-					</a>
-				</section>
-			</div>
-			<% } %>
-
-		</div>
-	</div>
-
-	<!-- footer -->
-	<%- include('../partials/footer') %>
-	<!-- /footer -->
 	
 </body>	
 </html>
