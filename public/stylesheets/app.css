@@ -508,6 +508,9 @@ textarea.form-input {
   color: #fff;
   margin-top: 15px;
 }
+.fas fa-cog {
+  color: black;
+}
 
 
 /*====== Media-Queries ======*/

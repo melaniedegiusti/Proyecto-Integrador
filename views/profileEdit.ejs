@@ -11,12 +11,11 @@
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
+	<link rel="stylesheet" href="./css/app.css">
 	<!-- UIkit CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/css/uikit.min.css" />
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/css/uikit.min.css" />		
 	<!-- UIkit JS -->
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit-icons.min.js"></script>
@@ -31,33 +30,34 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
+				<h2 class="products-title">Editar Mi Perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<form class="formulariocargar">
 				<div class="uk-margin">
-					<input class="uk-input uk-form-width-medium" type="text" placeholder="Nombre">
+					<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Nombre">
 				</div>
 				<div class="uk-margin">
-					<input class="uk-input uk-form-width-medium" type="text" placeholder="Marca">
+					<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Email">
 				</div>
-				
+				<div class="uk-margin">
+					<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Contraseña">
+				</div>
 				<div class="uk-margin" uk-margin>
 					<div uk-form-custom="target: true">
 						<input type="file">
-						<input class="uk-input uk-form-width-medium" type="text" placeholder="Seleccionar imagen" disabled>
+						<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Foto de Perfil" disabled>
 					</div>
 					<button class="uk-button uk-button-default">Submit</button>
 				</div>
-				<div class="uk-margin">
-					<textarea class="uk-textarea" rows="5" placeholder="Descripcion"></textarea>
-				</div>
+				
 				<p>
 					<input type="submit" value="Enviar"> 
 				</p>
 			
 			</form>
-				
+		</div>
+	</div>
 	<!-- footer -->
 	<%- include('../partials/footer') %>
 	<!-- /footer -->
