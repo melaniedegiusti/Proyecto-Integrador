@@ -23,6 +23,66 @@
   color: black;
 }
 
+#signin{
+  margin-left: 480px;
+  margin-top: 15px;
+}
+
+#signin1{
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+
+#boton{
+  margin-left: 540px;
+  margin-top: 30px;
+}
+
+#mover{
+  margin-left: -40px;
+}
+
+#mover1{
+  margin-left: -19px;
+}
+
+#mover2{
+  margin-left: -18px;
+}
+
+#espacio{
+  margin-left: 7px;
+  margin-right: 15px;
+}
+
+#espacio1{
+  margin-left: 7px;
+}
+ 
+#espacio3{
+   margin-right: 15px;
+}
+
+#medioagregar{
+  margin-left: 460px;
+  padding-top: 15px;
+}
+
+#agregar{
+  margin-left: 120px;
+  padding-top: 15px;
+}
+
+#medioeditar{
+  margin-left: 475px;
+}
+
+#editar{
+  margin-left: 80px;
+  padding-top: 15px;
+}
+
 /*====== Basics ======*/
 * {
   box-sizing: border-box;

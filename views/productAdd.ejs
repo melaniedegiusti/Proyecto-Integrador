@@ -34,7 +34,7 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="formulariocargar">
+			<form class="formulariocargar" id="medioagregar">
 				<div class="uk-margin">
 					<input class="uk-input uk-form-width-medium" type="text" placeholder="Nombre">
 				</div>
@@ -52,11 +52,13 @@
 				<div class="uk-margin">
 					<textarea class="uk-textarea" rows="5" placeholder="Descripcion"></textarea>
 				</div>
-				<p>
-					<input type="submit" value="Enviar"> 
+				<p id="agregar"> 
+					<input type="submit" value="Agregar"> 
 				</p>
 			
 			</form>
+		</div>
+	</div>	
 				
 	<!-- footer -->
 	<%- include('../partials/footer') %>

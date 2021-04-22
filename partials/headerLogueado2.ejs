@@ -26,8 +26,8 @@
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="" method="GET" class="search-form">
-						<input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
+					<form action="/searchResults" method="GET" class="search-form">
+						<input type="text" name="search" placeholder="Buscar autos, marcas y más" class="search-form_input">
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
@@ -47,17 +47,17 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					
-					<li><a href="/productAdd">Cargar productos</a></li>
+					<a href="/productAdd" id="espacio3">Cargar productos</a>
 				</ul>
 	
 				<ul class="right-navbar">
 					<li><a href="/profile">
-							Hernan Rosauro <i class="fas fa-user"></i>
+							Hernan Rosauro <i class="fas fa-user" id="espacio"></i>
 						</a>
 					</li>
 					<li>
 						<a href="/autos">
-							Cerrar Sesión<i class="fas fa-sign-in-alt"></i>
+							Cerrar Sesión<i class="fas fa-sign-in-alt" id="espacio"></i>
 						</a>
 
 					</li>
