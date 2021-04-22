@@ -15,6 +15,13 @@
    
 }
 
+#tuerca{
+  color:black;
+}
+
+#editar{
+  color: black;
+}
 
 /*====== Basics ======*/
 * {
@@ -189,6 +196,10 @@ hr {
 .col-12{
   text-align: center;
   font-family: barlow condensed -800;
+}
+
+.col-12 a{
+ text-align: center;
 }
 
 
