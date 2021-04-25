@@ -28,12 +28,82 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
-			</h2>
+	
+
+			<!-- product detail -->
+			<div class="container products-wrapper"> 
+  
+				<div class="d-flex align-items-center">
+					<h2 class="products-title"> <%= autosid[0].nombre %> </h2> 
+					<p class="product-detail-description">
+						<a href="/productAdd" id="editar">Editar</a>
+					</p>
+				</div>
+				<div class="product-detail">
+					<div class="row">
+						<article class="col-12 col-lg-8 product-detail-info">
+							<img src="<%= autosid[0].imagen %>" alt="" class="product-detail-img">
+							<p class="product-detail-description"> <%= autosid[0].descripcion %></p>
+						</article>
+
+						<div class="col-12 col-lg-4">
+							<section class="comments">
+								<article>
+									<img src="https://via.placeholder.com/35" alt="">
+									<div class="data">
+										<p class="user">
+										<strong> <a href="profile.html"> Pepito Gomez </a> </strong>
+										El Smart lo recontra recomiendo para la ciudad, es facil de estacionar, posee alta tecnologia. Excelente compra.</p>
+									</div>
+								</article>
+								<article>
+									<img src="https://via.placeholder.com/35" alt="">
+									<div class="data">
+										<p class="user">
+										<strong> <a href="profile.html">Juan Sanchez </a> </strong>
+										El audi a1, el mejor auto que tuve hasta el momento, tiene tamano perfecto, comodo para viajar.</p>
+									</div>
+								</article>
+								<article>
+									<img src="https://via.placeholder.com/35" alt="">
+									<div class="data">
+										<p class="user">
+										<strong> <a href="profile.html">Luisa Nazar </a> </strong>
+										Precio calidad excelentes. Estoy muy conforme con el auto y brindan muy buen servicio.
+										</p>
+									</div>
+								</article>
+								<article>
+									<img src="https://via.placeholder.com/35" alt="">
+									<div class="data">
+										<p class="user">
+										<strong> <a href="profile.html"> Milagros Coppola </a> </strong>
+										Velocidad inigualable, buscaba un auto rapido y mediano. Encontre lo que queria! </p>
+									</div>
+								</article>
+								<article>
+									<img src="https://via.placeholder.com/35" alt="">
+									<div class="data">
+										<p class="user">
+										<strong> <a href="profile.html"> Simon James </a> </strong>
+										El mercedes a200 es el mejor auto que tuve, super recomendable. Muy veloz</p>
+									</div>
+								</article>
+
+							</section>
+							<form class="form" action="" method="POST">
+								<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+								<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+							</form>
+							<hr>
+						</div>
+					</div>
+				</div>
+			</div> 
+			<!-- /product detail -->
 
 		</div>
+
 	</div>
 	<!-- footer -->
 	<%- include('../partials/footer') %>
