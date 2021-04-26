@@ -21,8 +21,9 @@
   color:black;
 }
 
-#editar{
+#editarAuto{
   color: black;
+  margin-left: 825px;
 }
 
 #signin{
@@ -84,7 +85,6 @@
   margin-left: 80px;
   padding-top: 15px;
 }
-
 
 /*====== Basics ======*/
 * {
@@ -201,6 +201,10 @@ hr {
   margin: 20px auto 0;
 }
 
+#comentario{
+  color: #031C32;
+}
+
 .main-navbar {
   margin-top: 20px;
   display: none;
@@ -271,7 +275,9 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: var(--dark-blue);
+  font-weight: bold;
+  margin-left: 15px;
 }
 
 .product-box {
@@ -310,6 +316,10 @@ hr {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
+}
+
+#color{
+  color: #031C32;
 }
 
 .product-box_data span {
