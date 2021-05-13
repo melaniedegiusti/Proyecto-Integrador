@@ -6,7 +6,7 @@ let controller = {
     },
     
     id: function(req, res) {
-        let ids = req.params.id;
+        let ids = req.params.id; //requerir parametros del query string
         let resultados=[];
         for (let i = 0; i < autos.length; i++){
             if(autos[i].id == ids){
@@ -14,7 +14,7 @@ let controller = {
             }
         };
         console.log(resultados);
-        res.render("product", {'autosid': resultados})
+        res.render("product", {'autosid': resultados}) // manda a la vista el autos id para usarlo 
     },
 };
 
