@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//requeris al archivo
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let autosRouter = require('./routes/autos');
@@ -28,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//habilitando la ruta
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/autos', autosRouter);
@@ -38,7 +40,7 @@ app.use('/homeLogueado', homeLogueadoRouter);
 app.use('/productAdd', productAddRouter);
 app.use('/profile', profileRouter);
 app.use('/profileEdit', profileEditRouter);
-app.use('/searchResults', searchResultsRouter)
+app.use('/searchResults', searchResultsRouter) 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
