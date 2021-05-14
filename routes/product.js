@@ -1,9 +1,9 @@
 var express = require('express'); // Requerimos modulo de express
 var router = express.Router(); 
-let productController = require("../controllers/productController");
+let autosController = require("../controllers/autosController");
 
-router.get('/', productController.product); 
-router.get('/:id', productController.id); //: ruta parametrizada, id viaja en la url. Obligatorio
+router.get('/', autosController.product); 
+router.get('/:id', autosController.id); //: ruta parametrizada, id viaja en la url. Obligatorio
 
 
 

@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-let searchResultsController = require("../controllers/searchResultsController");
+let autosController = require("../controllers/autosController");
 
  
 
-router.get('/', searchResultsController.product); 
-router.get('/:id', searchResultsController.nombre); 
+router.get('/', autosController.products); 
+router.get('/:id', autosController.search); 
 
 
 module.exports = router;

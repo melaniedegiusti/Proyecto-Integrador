@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-let loginController = require("../controllers/loginController");
+let userController = require("../controllers/userController");
 /* GET users listing. */
 
-router.get('/', loginController.index); 
+router.get('/', userController.index); 
 
 
 

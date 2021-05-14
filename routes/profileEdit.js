@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-let profileEditController = require("../controllers/profileEditController");
+let userController = require("../controllers/userController");
 
-router.get('/', profileEditController.profileEdit)
+router.get('/', userController.profileEdit)
 
 module.exports = router;

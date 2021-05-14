@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
-let homeLogueadoController = require("../controllers/homeLogueadoController");
+let autosController = require("../controllers/autosController");
 
-
-router.get('/', homeLogueadoController.index); 
+router.get('/homeLogueado', autosController.show); 
 
 
 

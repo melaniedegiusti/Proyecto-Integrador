@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-let profileController = require("../controllers/profileController");
+let userController = require("../controllers/userController");
 
 
 
-router.get('/', profileController.index); 
+router.get('/', userController.profile); 
 
 
 

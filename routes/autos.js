@@ -5,7 +5,7 @@ let autosController = require("../controllers/autosController");
 
 
 router.get('/', autosController.index); 
-
+router.get('/homeLogueado', autosController.show); 
 
 
 module.exports = router;
