@@ -1,38 +1,31 @@
 module.exports = (sequelize, dataTypes)=>{
 
-    let alias = 'Auto';
+    let alias = 'Comentario';
     let cols = {
         id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-
-         nombre: {
-            type: dataTypes.STRING
+        texto: {
+            type: dataTypes.STRING(400)
         },
-        descripcion: {
-            type: dataTypes.STRING
-        },
-        imagen: {
-            type: dataTypes.STRING
-        },
- 
-        fecha: {
+        creacion: {
             type: dataTypes.DATE
         },
         user_id :{
             type: dataTypes.INTEGER
         },
-
+        auto_id :{
+            type: dataTypes.INTEGER
+        },
     };
     let config = {
-        table: "productos",
+        table: "comentarios",
         timestamps: false,
         underscored: true
     }
 
     const Auto = sequelize.define(alias, cols, config)
     return Auto;
-
 }
