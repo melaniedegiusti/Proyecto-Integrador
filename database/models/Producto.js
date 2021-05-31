@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes)=>{
 
-    let alias = 'Auto';
+    let alias = 'Producto';
     let cols = {
         id: {
             autoIncrement: true,
@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes)=>{
         descripcion: {
             type: dataTypes.STRING
         },
-        imagen: {
+        image: {
             type: dataTypes.STRING
         },
  
@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes)=>{
         underscored: true
     }
 
-    const Auto = sequelize.define(alias, cols, config)
-    return Auto;
+    const Producto = sequelize.define(alias, cols, config)
+    return Producto;
 
 }

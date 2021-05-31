@@ -23,7 +23,7 @@
 	 <div class="container products-wrapper"> 
   
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> <%= autosid[0].nombre %> </h2> 
+			<h2 class="products-title"> <%= resultados[i].nombre %> </h2> 
 			<p class="product-detail-description">
 				<a href="/productAdd" id="editarAuto">Editar</a>
 			</p>
@@ -31,8 +31,8 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= autosid[0].imagen %>" alt="" class="product-detail-img">
-					<p id="descripcion"class="product-detail-description"> <%= autosid[0].descripcion %></p>
+					<img src="<%= resultados[i].image %>" alt="" class="product-detail-img">
+					<p id="descripcion"class="product-detail-description"> <%= resultados[i].descripcion %></p>
 				</article>
 
 				<div class="col-12 col-lg-4">
