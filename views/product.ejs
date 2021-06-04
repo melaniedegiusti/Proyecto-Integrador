@@ -20,11 +20,11 @@
 	<!-- /Header -->
 	
 	<!-- product detail -->
-	<% for (let i=0; i< 8; i+=1){ %>
+	
 	 	<div class="container products-wrapper"> 
 
 			<div class="d-flex align-items-center">
-				<h2 class="products-title"> <%= resultados[i].nombre %> </h2> 
+				<h2 class="products-title"> <%= resultado.nombre %> </h2> 
 				<p class="product-detail-description">
 					<a href="/productAdd" id="editarAuto">Editar</a>
 				</p>
@@ -32,8 +32,8 @@
 			<div class="product-detail">
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
-						<img src="<%= resultados[i].image %>" alt="" class="product-detail-img">
-						<p id="descripcion"class="product-detail-description"> <%= resultados[i].descripcion %></p>
+						<img src="<%= resultado.image %>" alt="" class="product-detail-img">
+						<p id="descripcion"class="product-detail-description"> <%= resultado.descripcion %></p>
 					</article>
 
 					<div class="col-12 col-lg-4">
@@ -90,7 +90,7 @@
 				</div>
 			</div>
 		</div> 
-	<% } %>
+	
 	<!-- /product detail -->
 
 	<!-- footer -->

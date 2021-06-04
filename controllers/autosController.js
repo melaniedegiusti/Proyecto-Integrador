@@ -6,14 +6,14 @@ let controller = {
     index: function(req, res) {
          producto.findAll()
             .then((resultados)=> res.render('home', {resultados}))
-            .catch(err=> console.log(err))
+            .catch((err) => console.log(err))
         // res.render("home", {"autosDestacados": autos, "autosComentario": autos});
     },
     product: function(req, res) {
         let primaryKey = req.params.id;
          producto.findByPk(primaryKey)
-             .then((resultados) => res.render('product', {resultados}))
-             .catch( err => console.log(err))
+             .then((resultado) => res.render('product', {resultado}))
+             .catch( (err) => console.log(err))
         // res.render("product", {"infoAuto": autos});
     },
     // id: function(req, res) {
