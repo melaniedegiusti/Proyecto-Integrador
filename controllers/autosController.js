@@ -1,6 +1,7 @@
-//let autos = require('../data/autos');
+let autos = require('../data/autos');
 const db = require('../database/models');
 const producto = db.Producto;
+const op = db.Sequelize.Op;
 
 let controller = {
     index: function(req, res) {
@@ -16,6 +17,7 @@ let controller = {
              .catch( (err) => console.log(err))
         // res.render("product", {"infoAuto": autos});
     },
+    
     // id: function(req, res) {
     //     let ids = req.params.id; //requerir parametros del query string
     //     let resultados=[];
@@ -34,19 +36,30 @@ let controller = {
     productAdd: (req, res)=> {
         res.render('productAdd')
     },
+    store: (req, res)=> {
+        let auto={
+            nombre: req.body.nombre,
+            
+            // image: req.body.image,
+            descripcion: req.body.descripcion
+        }   
+        producto.create(auto)
+            .then(()=>res.redirect('/autos/homeLogueado'))
+            .catch( (err) => console.log(err))
+
+    },
     products: function(req, res) {
         res.render("searchResults", {"autosid": autos});
     },
     search: function(req, res) {
-        let nombres = req.params.nombre;
-        let resultados=[];
-        for (let i = 0; i < autos.length; i++){
-            if(autos[i].nombre == nombres){
-                resultados.push(autos[i])
-            }
-        };
-        console.log(resultados);
-        res.render("searchResults", {'autosid': resultados})
+        let searchData = req.query.search;
+        producto.findAll({
+            where: [
+                { nombre: {[op.like]: `%${searchData}%`}}
+            ]
+        })
+        .then(resultados => res.render('searchResults',{resultados}))
+        .catch(err => console.log(err))
 
     },
 };

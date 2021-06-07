@@ -34,27 +34,24 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="formulariocargar" id="medioagregar">
+			<form class="formulariocargar" id="medioagregar" action='/autos/productAdd' method='POST'>
 				<div class="uk-margin">
-					<input class="uk-input uk-form-width-medium" type="text" placeholder="Nombre">
+					<input class="uk-input uk-form-width-medium" type="text" placeholder="Nombre" name="nombre">
 				</div>
-				<div class="uk-margin">
-					<input class="uk-input uk-form-width-medium" type="text" placeholder="Marca">
-				</div>
-				
-				<div class="uk-margin" uk-margin>
+
+				<!-- <div class="uk-margin" uk-margin>
 					<div uk-form-custom="target: true">
 						<input type="file">
-						<input class="uk-input uk-form-width-medium" type="text" placeholder="Seleccionar imagen" disabled>
+						<input class="uk-input uk-form-width-medium" type="text" placeholder="Seleccionar imagen" disabled name="image">
 					</div>
 					<button class="uk-button uk-button-default">Submit</button>
-				</div>
+				</div> -->
 				<div class="uk-margin">
-					<textarea class="uk-textarea" rows="5" placeholder="Descripcion"></textarea>
+					<textarea class="uk-textarea" rows="5" placeholder="Descripcion" name="descripcion" type="text"></textarea>
 				</div>
-				<p id="agregar"> 
-					<input type="submit" value="Agregar"> 
-				</p>
+				
+				<button type="submit" value="Agregar" id="agregar"> Agregar </button>
+			
 			
 			</form>
 		</div>
