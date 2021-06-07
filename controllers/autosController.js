@@ -39,9 +39,8 @@ let controller = {
     store: (req, res)=> {
         let auto={
             nombre: req.body.nombre,
-            
-            // image: req.body.image,
-            descripcion: req.body.descripcion
+            avatar: req.file.filname,
+            descripcion: req.body.descripcion,
         }   
         producto.create(auto)
             .then(()=>res.redirect('/autos/homeLogueado'))
