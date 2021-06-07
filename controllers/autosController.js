@@ -30,8 +30,10 @@ let controller = {
     //     res.render("product", {'autosid': resultados}) // manda a la vista el autos id para usarlo 
     // },
     show: function(req, res) {   //listamos recursos
-        // res.send(autos.lista);
-         res.render("homeLogueado", {"autosDestacados": autos, "autosComentario": autos});
+        producto.findAll()
+            .then((resultados)=> res.render('homeLogueado', {resultados}))
+            .catch((err) => console.log(err))
+        //  res.render("homeLogueado", {"autosDestacados": autos, "autosComentario": autos});
     },
     productAdd: (req, res)=> {
         res.render('productAdd')
@@ -39,11 +41,11 @@ let controller = {
     store: (req, res)=> {
         let auto={
             nombre: req.body.nombre,
-            avatar: req.file.filname,
+            image: req.file.filename,
             descripcion: req.body.descripcion,
         }   
         producto.create(auto)
-            .then(()=>res.redirect('/autos/homeLogueado'))
+            .then(()=>res.redirect('/autos'))
             .catch( (err) => console.log(err))
 
     },
