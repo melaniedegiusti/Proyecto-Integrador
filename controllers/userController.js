@@ -1,4 +1,7 @@
 let autos = require('../data/autos');
+const db = require('../database/models');
+const usuarios = db.User;
+const op = db.Sequelize.Op;
 
 let controller = {
    index: function(req, res) {
@@ -14,7 +17,20 @@ let controller = {
     },
     register: function(req, res) {
         // res.send(autos.lista);
-         res.render("register", {"autosDestacados": autos, "autosComentario": autos}); //NO LO ESTAMOS USANDO
+         res.render("register")//NO LO ESTAMOS USANDO
+    },
+    store: (req, res)=> {
+        let usuario ={
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            mail: req.body.mail,
+            telefono: req.body.telefono,
+            contrasena: req.body.contrasena
+        }
+
+        usuarios.create(usuario)
+            .then(()=>res.redirect('/login'))
+            .catch(err => console.log(err))
     },
 };
 

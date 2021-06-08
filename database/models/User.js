@@ -23,6 +23,10 @@ module.exports = (sequelize, dataTypes)=>{
         fecha: {
             type: dataTypes.DATE
         },
+
+        contrasena: {
+            type: dataTypes.STRING
+        }
        
     };
     let config = {
@@ -31,6 +35,6 @@ module.exports = (sequelize, dataTypes)=>{
         underscored: true
     }
 
-    const Auto = sequelize.define(alias, cols, config)
-    return Auto;
+    const User = sequelize.define(alias, cols, config)
+    return User;
 }

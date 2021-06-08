@@ -30,29 +30,36 @@
 			<!-- Show the "ultimos" products -->
 			<h2 id="signin2" class="col-12"> 
 				<i>
-					<form action="validar.php" method="post"></form>
+					<form action="/users/register" method="POST"></form>
 					<p id="mover2">
-						<label for="nombre">Nombre:</label>
-						<input type="text" name="nombre" id="nombre">
+						<label>Nombre:</label>
+						<input  name="nombre" id="nombre" type="text">
 					</p>
 				
 					<p id="mover1">
-						<label for="Apellido">Apellido:</label>
-						<input type="text" name="Apellido" id="Apellido">
+						<label>Apellido:</label>
+						<input  name="apellido" id="apellido" type="text">
 					</p>		
 				
 					<p>
-						<label for="email">Email:</label>
-						<input type="email" name="Email" id="mail">
+						<label>Email:</label>
+						<input  name="mail" id="mail" type="text">
 					</p>
 
 					<p id="mover">
-						<label for="Constraseña">Contraseña:</label>
-						<input type="text" name="Constraseña" id="Telefono">
+						<label>Telefono:</label>
+						<input name="telefono" id="Telefono" type="text">
 					</p>
+
+					<p id="mover">
+						<label>Contraseña:</label>
+						<input name="constrasena" id="contrasena" >
+					</p>
+
+					
 				
-					<a href="/autos/homeLogueado" id="boton">
-						<input type="submit" value="Sign Up"> 
+					<a href="/users/login" id="boton">
+						<input type="submit" value="Registrarse"> 
 					</a>
 				</i>
 	
