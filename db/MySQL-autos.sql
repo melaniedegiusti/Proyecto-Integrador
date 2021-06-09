@@ -7,8 +7,8 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT ,
 nombre VARCHAR (50) NOT NULL, 
 apellido VARCHAR (50) NOT NULL,
 mail VARCHAR (200) NOT NULL,  
-telefono INT(10) NOT NULL,
-fecha DATE NOT NULL
+fecha DATE, 
+contrasena VARCHAR (200) NOT NULL
 );
 
 CREATE TABLE productos(
@@ -16,7 +16,7 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 image VARCHAR (500) NOT NULL, 
 nombre VARCHAR (50) NOT NULL, 
 descripcion VARCHAR (500) NOT NULL,
-fecha DATE NOT NULL,
+fecha DATETIME,
 user_id INT UNSIGNED,
 
 FOREIGN KEY (user_id) REFERENCES usuarios (id)
@@ -34,11 +34,11 @@ FOREIGN KEY (product_id) REFERENCES productos (id)
 );
 
 
-INSERT INTO usuarios VALUES (default, "Luisa", "Nazar", "lnazar@udesa.edu.ar", "01136730839", "2001-04-04");
-INSERT INTO usuarios VALUES (default, "Pepito", "Gomez", "pepitogomez@udesa.edu.ar", "01136730899", "2003-06-04");
-INSERT INTO usuarios VALUES (default, "Juan", "Sanchez", "jsanchez@udesa.edu.ar", "04117730839", "2005-04-04");
-INSERT INTO usuarios VALUES (default, "Milagros", "Coppola", "mcoppola@udesa.edu.ar", "01199730839", "2020-04-04");
-INSERT INTO usuarios VALUES (default, "Simon", "James", "Simonj@udesa.edu.ar", "01136890839", "2001-04-04");
+INSERT INTO usuarios VALUES (default, "Luisa", "Nazar", "lnazar@udesa.edu.ar", "2001-04-04", "hola123");
+INSERT INTO usuarios VALUES (default, "Pepito", "Gomez", "pepitogomez@udesa.edu.ar", "2003-06-04", "hola124");
+INSERT INTO usuarios VALUES (default, "Juan", "Sanchez", "jsanchez@udesa.edu.ar", "2005-04-04", "hola12345");
+INSERT INTO usuarios VALUES (default, "Milagros", "Coppola", "mcoppola@udesa.edu.ar", "2020-04-04", "hola123456");
+INSERT INTO usuarios VALUES (default, "Simon", "James", "Simonj@udesa.edu.ar", "2020-04-04","hola1234567");
 
 INSERT INTO productos VALUES (default, "/images/a200.jpg", "Mercedes Benz a200", "El Mercedes-Benz Clase A (A 160) es un automóvil de lujo del segmento C,producido por el fabricante alemán Mercedes-Benz desde el año 1997. Es el primer modelo de la marca con tracción delantera, y todos sus motores son de cuatro cilindros en línea. El Clase A tiene su motor en posición delantera transversal, algo también inusual en los modelos de Mercedes-Benz. El Clase A es el modelo de entrada a la marca", "2020-05-02", 1);
 INSERT INTO productos VALUES (default, "/images/smart.jpg", "Mercedes Benz Smart", " El Smart Fortwo es un microcoche biplaza producido por el fabricante alemán Smart desde el año 1998. Existe en versiones coupé (denominada comercialmente city-coupé) y descapotable (cabrio). Durante un tiempo se produjo una versión extrema denominada Crossblade, sin techo y con puertas huecas. Smart fue fundada para producir automóviles enfocados al uso suburbano", "2018-02-08", 1);
@@ -110,9 +110,6 @@ INSERT INTO comentarios VALUES (default, "El mejor auto que tuve hasta el moment
 INSERT INTO comentarios VALUES (default, "Precio calidad excelentes. Estoy muy conforme con el auto y brindan muy buen servicio", "2017-07-08", 3,1);
 INSERT INTO comentarios VALUES (default, "Velocidad inigualable, buscaba un auto rapido y mediano. Encontre lo que queria!", "2014-08-07", 4, 1);
 INSERT INTO comentarios VALUES (default, "Es el mejor auto que tuve, super recomendable. Muy veloz", "2016-08-09", 5, 1);
-
-
-
 
 
 

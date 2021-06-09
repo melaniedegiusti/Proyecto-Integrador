@@ -1,6 +1,6 @@
 let autos = require('../data/autos');
 const db = require('../database/models');
-const usuarios = db.User;
+const usuarios = db.Usuario;
 const op = db.Sequelize.Op;
 
 let controller = {
@@ -24,12 +24,12 @@ let controller = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             mail: req.body.mail,
-            telefono: req.body.telefono,
-            contrasena: req.body.contrasena
+            // telefono: req.body.telefono,
+            contraseña: req.body.contraseña
         }
 
         usuarios.create(usuario)
-            .then(()=>res.redirect('/login'))
+            .then(()=>res.redirect('/users/login'))
             .catch(err => console.log(err))
     },
 };

@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes)=>{
 
-    let alias = 'User';
+    let alias = 'Usuario';
     let cols = {
         id: {
             autoIncrement: true,
@@ -16,15 +16,15 @@ module.exports = (sequelize, dataTypes)=>{
         mail:{
             type: dataTypes.STRING
         },
-        telefono: {
-            type: dataTypes.INTEGER
-        },
+        // telefono: {
+        //     type: dataTypes.INTEGER
+        // },
         
         fecha: {
             type: dataTypes.DATE
         },
 
-        contrasena: {
+        contraseña: {
             type: dataTypes.STRING
         }
        
@@ -35,6 +35,6 @@ module.exports = (sequelize, dataTypes)=>{
         underscored: true
     }
 
-    const User = sequelize.define(alias, cols, config)
-    return User;
+    const Usuario = sequelize.define(alias, cols, config)
+    return Usuario;
 }

@@ -29,8 +29,8 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 id="signin2" class="col-12"> 
-				<i>
-					<form action="/users/register" method="POST"></form>
+				
+				<form action="/users/register" method="POST" enctype="multipart/form-data">
 					<p id="mover2">
 						<label>Nombre:</label>
 						<input  name="nombre" id="nombre" type="text">
@@ -46,22 +46,20 @@
 						<input  name="mail" id="mail" type="text">
 					</p>
 
-					<p id="mover">
+					<!-- <p id="mover">
 						<label>Telefono:</label>
 						<input name="telefono" id="Telefono" type="text">
-					</p>
+					</p> -->
 
 					<p id="mover">
 						<label>Contraseña:</label>
-						<input name="constrasena" id="contrasena" >
-					</p>
-
-					
+						<input name="constraseña" id="contrasena" >
+					</p>					
 				
 					<a href="/users/login" id="boton">
 						<input type="submit" value="Registrarse"> 
 					</a>
-				</i>
+				</form>
 	
 			</h2>
 		</div>
