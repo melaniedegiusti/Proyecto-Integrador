@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes)=>{
 
         contraseña: {
             type: dataTypes.STRING
-        }
+        },
        
     };
     let config = {

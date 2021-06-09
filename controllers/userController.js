@@ -17,7 +17,7 @@ let controller = {
     },
     register: function(req, res) {
         // res.send(autos.lista);
-         res.render("register")//NO LO ESTAMOS USANDO
+         res.render('register')//NO LO ESTAMOS USANDO
     },
     store: (req, res)=> {
         let usuario ={
