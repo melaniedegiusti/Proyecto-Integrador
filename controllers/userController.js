@@ -2,6 +2,8 @@ let autos = require('../data/autos');
 const db = require('../database/models');
 const usuarios = db.Usuario;
 const op = db.Sequelize.Op;
+const bcrypt = require ('bcryptjs');
+
 
 let controller = {
    index: function(req, res) {
@@ -25,7 +27,7 @@ let controller = {
             apellido: req.body.apellido,
             mail: req.body.mail,
             // telefono: req.body.telefono,
-            contraseña: req.body.contraseña
+            contraseña: bcrypt.hashSync(req.body.contraseña,10),
         }
 
         usuarios.create(usuario)
