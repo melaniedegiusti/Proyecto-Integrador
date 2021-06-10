@@ -8,7 +8,7 @@ var storage = multer.diskStorage({
     destination: (req, file, cb) => {
             cb (null,'public/images/image')
     },
-    filname: (req, file, cb) => {
+    filename: (req, file, cb) => {
             cb (null, file.fieldname + '-' +Date.now ()+ path.extname(file.originalname))
     },
 })
