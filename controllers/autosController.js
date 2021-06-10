@@ -59,7 +59,10 @@ let controller = {
                 { nombre: {[op.like]: `%${searchData}%`}}
             ]
         })
-        .then(resultados => res.render('searchResults',{resultados}))
+        .then(resultados => {
+            console.log(resultados)
+            res.render('searchResults',{resultados})
+        })
         .catch(err => console.log(err))
 
     },

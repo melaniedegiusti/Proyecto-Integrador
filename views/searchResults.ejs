@@ -30,16 +30,10 @@
 			<!-- Show the "ultimos" products -->
 			<ul>
 				<% for (let i=0; i<resultados.length; i+=1){ %>
-					<li id="lista">
-						<a href="/autos/product/<%= resultados[i].id %>" id="nombres">
+					<li id="lista" >
+						<a href="/autos/product/<%= resultados[i].id %>" id="nombres" class="resultadosBusqueda">
 						<%= resultados[i].nombre %>
 						</a> 
-						<script>
-							document.getElementById("nombres").style.fontSize = "20px";
-							document.getElementById("nombres").style.color = "black";
-							document.getElementById("lista").style.listStyle = "circle";
-
-						</script>
 					</li>
 				<% } %> 
 			</ul>
