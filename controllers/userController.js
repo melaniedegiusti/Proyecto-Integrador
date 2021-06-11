@@ -21,6 +21,20 @@ let controller = {
         // res.send(autos.lista);
          res.render('register')//NO LO ESTAMOS USANDO
     },
+    login: function (req, res) {
+        res.render('login')
+    },
+    processLogin: function (req, res) {
+        db.User.findOne({
+            where: [{mail: req.body.mail}]
+        })
+            .then(user => {
+                console.log(user)
+            })
+            .catch( e=> console.log(e))
+    },
+
+
     store: (req, res)=> {
         let usuario ={
             nombre: req.body.nombre,
