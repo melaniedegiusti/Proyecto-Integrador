@@ -24,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(session({ 
   secret: "Nuestro mensaje secreto",
   resave: false,
@@ -31,7 +32,6 @@ app.use(session({
 }))
 
 //Configuramos locals para todas las vistas
-
 app.use((req, res, next) => {
   console.log(req.session.user)
   if(req.session.user != undefined){
@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
   if(req.cookies.userId && req.session.user == undefined){
-    db.User.findByPk(req.cookies.userId)
+    db.Usuario.findByPk(req.cookies.userId)
       .then(user =>{
         req.session.user = user
         res.locals = user

@@ -31,11 +31,11 @@ let controller = {
             .then(user => {
                 req.session.user = user
                 if(req.body.recordame){
-                    res.cookie('userId', user.id, {maxAge: 1000 * 60})
+                    res.cookie('userId', user.id, {maxAge: 1000 * 60 * 10})
                 }
                 return res.redirect('/autos/homeLogueado')
             })
-            .catch( e=> console.log(e))
+            .catch( error => console.log(error))
     },
 
 
