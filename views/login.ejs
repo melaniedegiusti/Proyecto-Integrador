@@ -28,26 +28,25 @@
 				</div>
 				<div id="signin">
 					<!-- <label for="inputEmail3" class="col-sm-2 col-form-label"></label> -->
-					<div class="col-sm-10">
-						<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-					</div>
-				
-
-				
-					<label for="Constraseña" class="col-sm-2 col-form-label"></label>
-					<div class="col-sm-10">
-						<input type="Constraseña" class="form-control" id="inputPassword3" placeholder="Constraseña">
-					</div>
-				
-
-		
-					<div id="signin1" class="form-group row">
-						<div class="col-sm-10">
-							<a href="/autos/homeLogueado">
-								<input type="submit" value="Sign In"> 
-							</a>
-						</div>
-					</div>
+					<form action="/users/login" method='POST'>
+						<p id="mover2">
+							<label>Email:</label>
+							<input  name="mail" id="nombre" type="text">
+						</p>
+						<p id="mover">
+							<label>Contraseña:</label>
+							<input name="contraseña" id="contrasena" >
+						</p>
+						
+						<p>
+							<label for="">Recordame</label>
+							<input type="checkbox" name="recordame">
+						</p>
+					
+						<a href="/autos/homeLogueado" id="boton">
+							<input type="submit" value="Ingresar"> 
+						</a>
+					</form>
 				</div>
 			</div>
 		</div> 

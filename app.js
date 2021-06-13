@@ -9,6 +9,8 @@ const session = require ('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let autosRouter = require('./routes/autos');
+const db = require('./database/models');
+
 
 
 var app = express();
@@ -26,9 +28,29 @@ app.use(session({
   secret: "Nuestro mensaje secreto",
   resave: false,
   saveUninitialized: true
-
-
 }))
+
+//Configuramos locals para todas las vistas
+
+app.use((req, res, next) => {
+  console.log(req.session.user)
+  if(req.session.user != undefined){
+    res.locals = req.session.user
+    }
+  return next ()
+})
+
+app.use((req, res, next) => {
+  if(req.cookies.userId && req.session.user == undefined){
+    db.User.findByPk(req.cookies.userId)
+      .then(user =>{
+        req.session.user = user
+        res.locals = user
+      })
+      .catch ( error => console.log(error))
+  }
+  return next()
+})
 
 //habilitando la ruta
 

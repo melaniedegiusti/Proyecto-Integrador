@@ -25,11 +25,15 @@ let controller = {
         res.render('login')
     },
     processLogin: function (req, res) {
-        db.User.findOne({
+        db.Usuario.findOne({
             where: [{mail: req.body.mail}]
-        })
+            })
             .then(user => {
-                console.log(user)
+                req.session.user = user
+                if(req.body.recordame){
+                    res.cookie('userId', user.id, {maxAge: 1000 * 60})
+                }
+                return res.redirect('/autos/homeLogueado')
             })
             .catch( e=> console.log(e))
     },
