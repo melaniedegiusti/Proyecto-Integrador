@@ -45,7 +45,7 @@ app.use((req, res, next) => {
     db.Usuario.findByPk(req.cookies.userId)
       .then(user =>{
         req.session.user = user
-        res.locals = user
+        res.locals = req.session.user
       })
       .catch ( error => console.log(error))
   }
