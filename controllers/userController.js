@@ -52,6 +52,13 @@ let controller = {
             .then(()=>res.redirect('/users/login'))
             .catch(err => console.log(err))
     },
+
+    logout: (req, res)=> {
+        req.session.destroy()
+        res.clearCookie("userId")
+
+        return res.redirect('/autos')
+    }
 };
 
 module.exports = controller;
