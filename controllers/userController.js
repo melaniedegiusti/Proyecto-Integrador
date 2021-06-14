@@ -50,7 +50,7 @@ let controller = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             mail: req.body.mail,
-            // telefono: req.body.telefono,
+            image: req.file.filename,
             contraseña: bcrypt.hashSync(req.body.contraseña,10),
         }
 
