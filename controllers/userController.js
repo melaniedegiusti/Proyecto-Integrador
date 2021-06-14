@@ -3,6 +3,8 @@ const db = require('../database/models');
 const usuarios = db.Usuario;
 const op = db.Sequelize.Op;
 const bcrypt = require ('bcryptjs');
+const producto = db.Producto;
+
 
 
 let controller = {
@@ -12,8 +14,12 @@ let controller = {
     },
     profile: function(req, res) {
         // res.send(autos.lista);
-         res.render("profile", {"autosDestacados": autos, "autosComentario": autos});
-     },
+        //  res.render("profile", {"autosDestacados": autos, "autosComentario": autos});
+        producto.findAll()
+            .then((resultados)=> res.render('profile', {resultados}))
+            .catch((err) => console.log(err))
+        //  res.render("homeLogueado", {"autosDestacados": autos, "autosComentario": autos});
+    },
     profileEdit: (req, res)=> {
         res.render('profileEdit')
     },

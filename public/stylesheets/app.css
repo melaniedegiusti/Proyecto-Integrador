@@ -223,10 +223,14 @@ hr {
   display: none;
   
 }
-
-.left-navbar,
+.nombreUsuario{
+  font-size: 1.2em;
+}
+/* .left-navbar{
+  font-size: 1.3em;
+} */
 .right-navbar {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .logout{

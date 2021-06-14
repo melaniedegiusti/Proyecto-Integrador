@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- Header -->
-	<%- include('../partials/headerLogueado2') %>
+	<%- include('../partials/header') %>
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->
@@ -57,16 +57,15 @@
 			<% for (let i=0; i< 8; i+=1){ %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product/<%= autosDestacados[i].id %>">
+					<a href="/autos/product/<%= resultados[i].id %>">
 						<figure class="product-box_image"> 
-							<img src="<%= autosDestacados[i].imagen %>"> 
+							<img src="/images/<%= resultados[i].image %>"> 
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= autosDestacados[i].nombre %> </h2>
-							<p> <%= autosDestacados[i].descripcion %></p>
+							<h2 id="color"> <%= resultados[i].nombre %> </h2>
+							<p> <%= resultados[i].descripcion %></p>
 							<p>Comentarios: 5</p>
 						</article>
-					
 					</a>
 				</section>
 			</div>

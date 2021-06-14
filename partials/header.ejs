@@ -14,63 +14,70 @@
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
+<body>
+	<!-- Header -->
+	<header class="main-header">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-5 col-md-2">
+					<a href="/autos" class="main-header_home-link">
+						<img src="/images/logosinfondopng.png">
+					</a>
+				</div>
+			<!--buscador-->
+				<div class="col-7 col-md-6">
+					<form action="/autos/searchResults" method="GET" class="search-form">
+						<input type="text" name="search" placeholder="Buscar autos, marcas y más" class="search-form_input"> 
+						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+					</form>
+				</div>
+	
+				<div class="col-12 col-md-4">
+					<a class="main-header_credit-link">
+						<!-- <i class="fas fa-hand-holding-usd"></i> -->
+						Todos los autos en un solo lugar
+					</a>
+				</div>
+			</div>
+	
+			<button class="btn-toggle-navbar">
+				<i class="fas fa-bars"></i>
+			</button>
+	
 
-<!-- Header -->
-<header class="main-header">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-5 col-md-2">
-                <a href="/autos" class="main-header_home-link">
-                    <img src="/images/logosinfondopng.png" width="200px" height="100px">
-                </a>
-            </div>
-
-            <div class="col-7 col-md-6">
-                <form action="/autos/searchResults" method="GET" class="search-form">
-                    <input type="text" name="search" placeholder="Buscar autos, marcas y más" class="search-form_input">
-                    <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-
-            <div class="col-12 col-md-4">
-                <a id="titulo "class="main-header_credit-link">
-                    <!-- <i class="fas fa-hand-holding-usd"></i> -->
-                    Todos los autos en un solo lugar
-                </a>
-            </div>
-        </div>
-
-        <button class="btn-toggle-navbar">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <nav class="main-navbar">
-            <!-- <ul class="left-navbar">
-                <li><a href="/autos">Todos los productos</a></li>
-                 solo logueado <li><a href="">Cargar productos</a></li> 
-            </ul> -->
-
-            <ul class="right-navbar">
-                <!-- Solo logueado <li><a href="profile.html">
-                        Nombre del usuario <i class="fas fa-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <form action="" method="post">
-                        <button class="logout" type="submit">
-                            Cerrar sesión <i class="fas fa-sign-in-alt"></i>
-                        </button>
-                    </form>
-                </li> -->
-                <li>
-                    <a href="/users/register" >Creá tu cuenta <i class="far fa-address-card" id="espacio"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/users/login">Ingresá <i class="fas fa-sign-in-alt" id="espacio1"></i></a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<!-- /Header -->
+			<nav class="main-navbar">
+				<!-- <ul class="left-navbar">
+					<a href="/autos/productAdd" id="espacio3">Cargar productos</a>
+				</ul> -->
+	
+				<ul class="right-navbar">
+					<% if (locals.nombre) {%>
+						<ul class="left-navbar">
+							<a href="/autos/productAdd" id="espacio3">Cargar productos</a>
+						</ul>
+						<li class="nombreUsuario">
+							<a href="/users/profile">
+							 <%= locals.nombre %> <%= locals.apellido %> <i class="fas fa-user" id="espacio"></i>
+							</a>
+						</li>
+						<li>
+							<form action="/users/logout" method="POST"> 
+								<button type="submit" class="fas fa-sign-in-alt" id="espacio">Cerrar Sesión</button>
+							</form>
+						</li>
+					<%} else { %>
+						<li>
+							<a href="/users/register" >Creá tu cuenta <i class="far fa-address-card" id="espacio"></i></a>
+						</li>
+						<li>
+							<a href="/users/login">Ingresá <i class="fas fa-sign-in-alt" id="espacio1"></i></a>
+						</li>
+					<% } %>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- /Header -->
+	
+</body>	
+</html>
