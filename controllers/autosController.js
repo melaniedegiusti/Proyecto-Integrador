@@ -12,10 +12,12 @@ let controller = {
     },
     product: function(req, res) {
         let primaryKey = req.params.id;
-         producto.findByPk(primaryKey)
+         producto.findByPk(primaryKey, {
+                include: [{association: 'usuario'}]
+            })
              .then((resultado) => res.render('product', {resultado}))
              .catch( (err) => console.log(err))
-        // res.render("product", {"infoAuto": autos});
+        
     },
     
     // id: function(req, res) {

@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes)=>{
         user_id :{
             type: dataTypes.INTEGER
         },
-        auto_id :{
+        product_id :{
             type: dataTypes.INTEGER
         },
     };
@@ -26,6 +26,17 @@ module.exports = (sequelize, dataTypes)=>{
         underscored: true
     }
 
-    const Auto = sequelize.define(alias, cols, config)
-    return Auto;
+    const Comentario = sequelize.define(alias, cols, config)
+
+    // Comentario.associate = (models)=> {
+    //     Comentario.belongsToMany(models.Producto, {
+    //         as: 'producto',
+    //         through: 'comentario_id', // nose si esta bien
+    //         otherKey: 'product_id',
+    //         timestamps: false,
+    //     })
+    // }
+
+
+    return Comentario;
 }
