@@ -19,6 +19,9 @@ let controller = {
              .catch( (err) => console.log(err))
         
     },
+    comentario: function (req,res) {
+        
+    },
     
     // id: function(req, res) {
     //     let ids = req.params.id; //requerir parametros del query string

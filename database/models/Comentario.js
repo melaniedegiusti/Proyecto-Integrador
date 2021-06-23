@@ -36,6 +36,18 @@ module.exports = (sequelize, dataTypes)=>{
     //         timestamps: false,
     //     })
     // }
+    Comentario.associate = (models) => {
+        //relacion muchos
+        Comentario.belongsTo(models.Producto, {
+            as: 'producto',
+            foreignKey: 'product_id'
+        })
+        Comentario.belongsTo(models.Usuario, {
+            as: 'comentario',
+            foreignKey: 'user_id'
+        })
+
+    }
 
 
     return Comentario;

@@ -48,7 +48,14 @@ module.exports = (sequelize, dataTypes)=>{
         //     otherKey: 'comentario_id',
         //     timestamps: false,
         // })
+    Producto.associate = (models) => {
+            //relacion uno
+            Producto.hasMany(models.Comentario, {
+                as: 'comentario', //nombre que le ponemos nosotros 
+                foreignKey: 'product_id'
+            })
     }
+}
 
 
     return Producto;
