@@ -13,14 +13,15 @@ let controller = {
     product: function(req, res) {
         let primaryKey = req.params.id;
          producto.findByPk(primaryKey, {
-                include: [{association: 'usuario'}]
+                include: [{association: 'usuario'}],
+                // include: [{ association: 'comentario'}],
             })
              .then((resultado) => res.render('product', {resultado}))
              .catch( (err) => console.log(err))
         
     },
     comentario: function (req,res) {
-        
+       
     },
     
     // id: function(req, res) {
