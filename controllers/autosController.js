@@ -13,11 +13,24 @@ let controller = {
     product: function(req, res) {
         let primaryKey = req.params.id;
          producto.findByPk(primaryKey, {
-                include: [{association: 'usuario'}, {association: 'comentario'} ],
-                // include: [{ association: 'comentario'}],
+                include: [{association: 'usuario'},
+            ] })
+            .then((resultado) => {
+                db.Comentario.findAll({
+                    where:{
+                        product_id:resultado.id
+                    },
+                    include:[{association: 'usuario'},
+                ],
+
+                })
+            .then((comentarios)=>{
+                //res.send({resultado,comentarios})
+        
+               res.render('product',{resultado,comentarios})
             })
-             .then((resultado) => res.render('product', {resultado}))
-             .catch( (err) => console.log(err))
+        })
+            .catch( (err) => console.log(err))
         
     },
     comentario: function (req,res) {
@@ -52,6 +65,7 @@ let controller = {
             nombre: req.body.nombre,
             image: req.file.filename,
             descripcion: req.body.descripcion,
+            user_id: req.session.user.id,
         }   
         producto.create(auto)
             .then(()=>res.redirect('/autos'))

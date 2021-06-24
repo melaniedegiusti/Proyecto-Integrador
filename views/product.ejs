@@ -39,16 +39,21 @@
 
 					<div class="col-12 col-lg-4">
 						<section class="comments">
-								<article>
-									<img src="/images/comentario4.jpg" alt="">
-									<div class="data">
-										<p class="user">
-										<strong id="comentario"> <a href="/profile" id="comentario"> <%=resultado.usuario.nombre%> <%=resultado.usuario.apellido%> </a> </strong>
-										<%for(let i =0; i<resultado.comentario.length; i+=1){  %> 
-											<%= resultado.comentario[i].texto%>
-										<% } %>
+								
+										
+										<%for(let i =0; i<comentarios.length; i+=1){%>
+											<article>
+												<img src="/images/comentario4.jpg" alt="">
+												<div class="data">
+												<p class="user">
+													<strong> <a href="/profile"> <%=comentarios[i].usuario.nombre%> <%=comentarios[i].usuario.apellido%> </a> </strong>
+											
+
+										<p><%=comentarios[i].texto%></p>
 									</div>
 								</article>
+										<%}%>
+									
 						</section>
 						<form class="form" >
 							<input class="form-input" type="text" value="" placeholder="Agregar comentario">

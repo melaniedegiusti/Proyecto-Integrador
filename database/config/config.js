@@ -4,7 +4,10 @@ module.exports = {
     "password": "",
     "database": "autos",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define": {
+      "onDelete":"cascade"
+    },
   },
   "test": {
     "username": "root",
