@@ -39,23 +39,14 @@ module.exports = (sequelize, dataTypes)=>{
         Producto.belongsTo(models.Usuario, {
             as: 'usuario', 
             foreignKey: 'user_id'
+        })    
+        //relacion uno
+        Producto.hasMany(models.Comentario, {
+            as: 'comentario', //nombre que le ponemos nosotros 
+            foreignKey: 'product_id'
         })
-        //muchos a muchos con comentarios
-        // Producto.belongsToMany(models.Comentario, { 
-        //     as: 'comentario',
-        //     through: 'product_id', // nose si esta bien
-        //     foreignKey: 'product_id',
-        //     otherKey: 'comentario_id',
-        //     timestamps: false,
-        // })
-    Producto.associate = (models) => {
-            //relacion uno
-            Producto.hasMany(models.Comentario, {
-                as: 'comentario', //nombre que le ponemos nosotros 
-                foreignKey: 'product_id'
-            })
     }
-}
+
 
 
     return Producto;
