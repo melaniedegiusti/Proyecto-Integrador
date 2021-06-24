@@ -43,8 +43,10 @@
 									<img src="/images/comentario4.jpg" alt="">
 									<div class="data">
 										<p class="user">
-										<strong id="comentario"> <a href="/profile" id="comentario"> Pepito Gomez </a> </strong>
-										<!-- <%= resultado.comentario.texto %></p> -->
+										<strong id="comentario"> <a href="/profile" id="comentario"> <%=resultado.usuario.nombre%> <%=resultado.usuario.apellido%> </a> </strong>
+										<%for(let i =0; i<resultado.comentario.length; i+=1){  %> 
+											<%= resultado.comentario[i].texto%>
+										<% } %>
 									</div>
 								</article>
 						</section>
