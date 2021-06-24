@@ -64,6 +64,12 @@ let controller = {
         res.clearCookie("userId")
 
         return res.redirect('/autos')
+    },
+    perfiles: (req, res)=> {
+        let primaryKey = req.params.id;
+         usuarios.findByPk(primaryKey)
+        .then((resultados)=> res.render('perfiles', {resultados}))
+        .catch((err) => console.log(err))
     }
 };
 

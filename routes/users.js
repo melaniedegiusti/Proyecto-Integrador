@@ -27,6 +27,7 @@ router.get('/register', userController.register);
 router.post('/register', upload.single ('image'), userController.store);
 router.get('/profileEdit', userController.profileEdit);
 router.post('/logout', userController.logout);
+router.get('/perfiles/:id', userController.perfiles);
 
 
 module.exports = router;
