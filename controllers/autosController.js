@@ -23,6 +23,9 @@ let controller = {
     comentario: function (req,res) {
        
     },
+    editar: function (req,res){
+        res.render('edit')
+    },
     
     // id: function(req, res) {
     //     let ids = req.params.id; //requerir parametros del query string
@@ -73,5 +76,19 @@ let controller = {
 
     },
 };
+
+// let EditController = {
+//     index: function (req, res) {
+//         producto.findAll()
+//             .then((resultados) => res.render('home', { resultados }))
+//             .catch((err) => console.log(err))
+//     },
+//     show: function (req, res) {  
+//         producto.findAll()
+//             .then((resultados) => res.render('homeLogueado', { resultados }))
+//             .catch((err) => console.log(err))
+       
+//     },
+// };
 
 module.exports = controller;
