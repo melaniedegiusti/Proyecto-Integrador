@@ -42,7 +42,7 @@ let controller = {
         usuarios.findOne({
             where: [{mail: req.body.mail}]
             })
-            .then(usuario => {
+            .then(user => {
                 if (user==null) {
                     errors.login = "Email es incorrecto";
                     res.locals.error = errors;

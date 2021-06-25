@@ -26,9 +26,10 @@
 					<h2 class="products-title">Ingresá</h2>
 					<h2>Te estabamos esperando</h2>
 				</div>
-				<div id="signin">
+				
+				<h2 id="signin">
 					<% if(locals.errors){ %>
-						<p class="alert"> <%= errors.login%></p>
+						<p class="alert"> <%= errors.login %> </p>
 					<% } %>
 					<form action="/users/login" method='POST'>
 						<p id="mover2">
