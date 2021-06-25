@@ -33,25 +33,23 @@
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
 						<img src="/images/<%= resultado.image %>" alt="" class="product-detail-img">
-						<p id="descripcion"class="product-detail-description"> <%= resultado.descripcion %></p>
-						<p id="descripcion"class="product-detail-description"> Subido por: <%= resultado.usuario.nombre %> <%= resultado.usuario.apellido %></p>
+						<p id="descripcion"class="product-detail-description"> <%= resultado.descripcion %></p>						
+						<a href="/users/perfiles/<%= resultado.usuario.id %>" id="subido"class="product-detail-description"> Subido por:  <%= resultado.usuario.nombre %> <%= resultado.usuario.apellido %></a> 
+						
 					</article>
 
 					<div class="col-12 col-lg-4">
-						<section class="comments">
-								
-										
+						<section class="comments">																		
 										<%for(let i =0; i<comentarios.length; i+=1){%>
 											<article>
-												<img src="/images/comentario4.jpg" alt="">
+												<img src="/images/<%= comentarios[i].usuario.image %>" alt="">
 												<div class="data">
-												<p class="user">
-													<strong> <a href="/profile"> <%=comentarios[i].usuario.nombre%> <%=comentarios[i].usuario.apellido%> </a> </strong>
-											
-
-										<p><%=comentarios[i].texto%></p>
-									</div>
-								</article>
+													<p class="user">
+														<strong> <a href="users/perfiles/<%= comentarios[i].usuario.id %>" id="user"> <%=comentarios[i].usuario.nombre%> <%=comentarios[i].usuario.apellido%> </a> </strong>
+													</p>
+													<p><%=comentarios[i].texto%></p>								
+												</div>
+											</article>
 										<%}%>
 									
 						</section>
