@@ -1,4 +1,4 @@
-let autos = require('../data/autos');
+// let autos = require('../data/autos');
 const db = require('../database/models');
 const producto = db.Producto;
 const op = db.Sequelize.Op;
@@ -36,9 +36,9 @@ let controller = {
     comentario: function (req,res) {
        
     },
-    editar: function (req,res){
-        res.render('edit')
-    },
+    //editar: function (req,res){
+    //    res.render('edit')
+   // },
     
     // id: function(req, res) {
     //     let ids = req.params.id; //requerir parametros del query string
@@ -75,6 +75,43 @@ let controller = {
     products: function(req, res) {
         res.render("searchResults", {"autosid": autos});
     },
+    editar: (req, res) => {
+        let primaryKey = req.params.id;
+        db.Producto.findByPk(primaryKey)
+            .then((auto) => {
+                // if (req.session.user == undefined) {
+                //     res.redirect(`/home${req.params.id}`)
+                 //}
+                //else if (auto.usuarios_id == req.session.user.id) {
+                    db.Producto.findByPk(primaryKey)
+                        //.then(resultados => res.send( resultados ))
+                        .then(resultados => res.render("edit", { resultados }))
+                        .catch(err => console.log(err))
+               // }
+               // else {
+               //     res.redirect(`/home${req.params.id}`)
+              //  }
+            })
+    },
+    editarPost: (req, res) => {
+        let primaryKey = req.params.id;
+        db.Producto.findByPk(primaryKey)
+            .then((auto) => {
+               // if (req.session.user == undefined) {
+                //    res.redirect(`/productos/busqueda/${req.params.id}`)
+                //}
+                //else if (auto.usuarios_id == req.session.user.id) {
+                    let actualizarauto = req.body
+                    db.Producto.update(actualizarauto, { where: { id: primaryKey } })
+                        .then(() => res.redirect(`/autos/product/${req.params.id}`))
+                        .catch(err => console.log(err))
+               // }
+                //else {
+                    res.redirect(`/autos/product/${req.params.id}`)
+               // }
+            })
+    },
+
     search: function(req, res) {
         let searchData = req.query.search;
         producto.findAll({

@@ -21,7 +21,41 @@
     <%- include('../partials/header') %>
         <!-- /Header -->
        
-
+        <!-- Novedades -->
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Editar producto</h2>
+                </div>
+                <!-- Show the "ultimos" products -->
+                <h2 id="signin2" class="col-12">
+        
+                    <form action="/autos/edit/<%=resultados.id%>" method='POST' > 
+                        <p id="mover2">
+                            <label>Marca/modelo:</label>
+                            <input name="nombre" id="nombre" class="form-control" type="text" value= <%=resultados.nombre %>>
+                        </p>
+        
+                        <p id="mover1">
+                            <label>Descripcion:</label>
+                            <textarea name="descripcion"><%=resultados.descripcion%></textarea> >
+                        </p>
+        
+                        <!-- <p id="mover">
+        						<label>Telefono:</label>
+        						<input name="telefono" id="Telefono" type="text">
+        					</p> -->
+                <!-- <div class="uk-margin" uk-margin>
+                            <input type="file" name="image" placeholder="Seleccionar imagen">
+                        </div> -->
+        
+                            <input type="submit" value="Guardar">
+                        </a>
+                    </form>
+        
+                </h2>
+            </div>
+        </div>
 
 
 
