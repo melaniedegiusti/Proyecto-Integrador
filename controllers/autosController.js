@@ -33,24 +33,22 @@ let controller = {
             .catch( (err) => console.log(err))
         
     },
-    comentario: function (req,res) {
-       
+    comentarioAdd: (req,res) => {
+       if(req.session.user == undefined){
+           return res.redirect('/users/login')
+       }else {
+           let comentario={
+               texto: req.body.comentario,
+               user_id: req.session.user.id,
+               product_id: req.params.id,
+           }
+           db.Comentario.create(comentario)
+
+           .then(()=> res.redirect('/autos/product'))
+           .catch(err=> console.log(err))
+       }
     },
-    //editar: function (req,res){
-    //    res.render('edit')
-   // },
     
-    // id: function(req, res) {
-    //     let ids = req.params.id; //requerir parametros del query string
-    //     let resultados=[];
-    //     for (let i = 0; i < autos.length; i++){
-    //         if(autos[i].id == ids){
-    //             resultados.push(autos[i])
-    //         }
-    //     };
-    //     console.log(resultados);
-    //     res.render("product", {'autosid': resultados}) // manda a la vista el autos id para usarlo 
-    // },
     show: function(req, res) {   //listamos recursos
         producto.findAll()
             .then((resultados)=> res.render('homeLogueado', {resultados}))

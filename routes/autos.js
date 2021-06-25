@@ -18,13 +18,12 @@ router.get('/', autosController.index);
 router.get('/homeLogueado', autosController.show); 
 // router.get('/product', autosController.product); 
 router.get('/product/:id', autosController.product); //: ruta parametrizada, id viaja en la url. Obligatorio
-router.get('/product/:id', autosController.comentario);
 router.get('/productAdd', autosController.productAdd);
 router.post('/productAdd', upload.single ('image'), autosController.store);
 router.get('/searchResults', autosController.search); 
 router.get('/edit/:id', autosController.editar); //edit ejs
 router.post('/edit/:id', autosController.editarPost); //edit ejs
-
+router.post('/product/:id', autosController.comentarioAdd);
 
 
 // product add
