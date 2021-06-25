@@ -27,7 +27,9 @@
 					<h2>Te estabamos esperando</h2>
 				</div>
 				<div id="signin">
-					<!-- <label for="inputEmail3" class="col-sm-2 col-form-label"></label> -->
+					<% if(locals.errors){ %>
+						<p class="alert"> <%= errors.login%></p>
+					<% } %>
 					<form action="/users/login" method='POST'>
 						<p id="mover2">
 							<label>Email:</label>

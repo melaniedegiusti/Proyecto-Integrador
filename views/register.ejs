@@ -29,7 +29,9 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 id="signin2" class="col-12"> 
-				
+				<% if(locals.errors){ %>
+					<p class="alert"> <%= errors.register %> </p>
+				<% } %>
 				<form action="/users/register" method='POST' enctype="multipart/form-data">
 					<p id="mover2">
 						<label>Nombre:</label>
