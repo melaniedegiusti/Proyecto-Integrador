@@ -44,7 +44,7 @@ let controller = {
            }
            db.Comentario.create(comentario)
 
-           .then(()=> res.redirect('/autos'))
+           .then(()=> res.redirect(`/autos/product/${req.params.id}`))
            .catch(err=> console.log(err))
        }
     },
