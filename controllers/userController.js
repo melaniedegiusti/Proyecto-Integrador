@@ -114,7 +114,22 @@ let controller = {
         return res.redirect('/autos')
     },
     perfiles: (req, res)=> {
-        let primaryKey = req.params.id;
+        let primaryKey = req.params.id
+        if(req.session.user == undefined){
+            res.redirect('/autos')
+        }else{
+            usuarios.findByPk(primaryKey)
+            .then((user)=> {
+                db.Producto.findAll({
+                    where: {user_id: user.id}
+                })
+                .then((producto)=>{
+                    res.render('profile', {user, producto})
+                    
+                })
+                .catch((error)=> console.log(error))
+            })
+        }
          usuarios.findByPk(primaryKey)
         .then((resultados)=> res.render('perfiles', {resultados}))
         .catch((err) => console.log(err))
