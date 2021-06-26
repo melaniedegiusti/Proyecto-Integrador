@@ -44,7 +44,7 @@ let controller = {
            }
            db.Comentario.create(comentario)
 
-           .then(()=> res.redirect('/autos/product'))
+           .then(()=> res.redirect('/autos'))
            .catch(err=> console.log(err))
        }
     },
@@ -126,18 +126,6 @@ let controller = {
     },
 };
 
-// let EditController = {
-//     index: function (req, res) {
-//         producto.findAll()
-//             .then((resultados) => res.render('home', { resultados }))
-//             .catch((err) => console.log(err))
-//     },
-//     show: function (req, res) {  
-//         producto.findAll()
-//             .then((resultados) => res.render('homeLogueado', { resultados }))
-//             .catch((err) => console.log(err))
-       
-//     },
-// };
+
 
 module.exports = controller;
