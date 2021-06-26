@@ -58,12 +58,16 @@ list-style: circle;
 
 
 #boton{
-  margin-left: 540px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+#boton1{
+  margin-left: 530px;
   margin-top: 30px;
 }
 
 #mover{
-  margin-left: -40px;
+  margin-left: -58px;
 }
 
 #mover1{

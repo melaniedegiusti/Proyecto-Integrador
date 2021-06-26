@@ -20,7 +20,7 @@ var upload= multer ({storage:storage})
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/profile/:id', userController.profile); 
+
 router.get('/login', userController.index);
 router.post('/login', userController.processLogin);
 router.get('/register', userController.register); 

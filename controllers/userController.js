@@ -16,12 +16,7 @@ let controller = {
            return res.render('login')
        } 
     },
-    profile: (req, res) =>{
-        producto.findAll()
-            .then((resultados)=> res.render('profile', {resultados}))
-            .catch((err) => console.log(err))
-        
-    },
+    
     profileEdit: (req, res)=> {
         let primaryKey = req.params.id;
         usuarios.findByPk(primaryKey)
@@ -50,7 +45,7 @@ let controller = {
                         where: {id: primaryKey}
                     }
                 )
-                .then(()=> res.redirect(`/users/profile/${req.params.id}`))
+                .then(()=> res.redirect(`/users/perfiles/${req.params.id}`))
             // }
         })
         .catch( error => console.log(error))
@@ -147,8 +142,8 @@ let controller = {
     },
     perfiles: (req, res)=> {
         let primaryKey = req.params.id
-        if(req.session.user == undefined){
-            res.redirect('/autos')
+        if(req.session.user == req.params.id){
+            res.redirect(`/users/profile/${req.params.id}`)
         }else{
             usuarios.findByPk(primaryKey)
             .then((user)=> {

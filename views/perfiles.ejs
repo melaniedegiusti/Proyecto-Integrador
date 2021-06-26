@@ -28,9 +28,11 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= resultados.nombre %> <%= resultados.apellido %>
-						<!-- <a href="/users/profileEdit">
+					<% if (locals.id == resultados.id) {%>
+						<a href="/users/profileEdit/<%= locals.id %>">
 							<i class="fas fa-cog" id="tuerca"></i>
-						</a> -->
+						</a> 
+					<% } %>
 					</h1>
 					<!-- <a class="btn mt-3 ml-4" href="">SEGUIR</a> -->
 				</div>
