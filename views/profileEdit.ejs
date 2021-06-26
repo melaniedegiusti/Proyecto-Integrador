@@ -34,20 +34,23 @@
 				<h2 class="products-title">Editar Mi Perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="formulariocargar" id="medioeditar">
+			<form class="formulariocargar" id="medioeditar" action="" method="POST">
 				<div class="uk-margin">
-					<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Nombre">
+					<input class="uk-input uk-form-width-medium" type="text" name="nombre" placeholder="Cambiar Nombre">
 				</div>
 				<div class="uk-margin">
-					<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Email">
+					<input class="uk-input uk-form-width-medium" type="text" name="apellido" placeholder="Cambiar Aprellido">
 				</div>
 				<div class="uk-margin">
-					<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Contraseña">
+					<input class="uk-input uk-form-width-medium" type="text" name="mail" placeholder="Cambiar Email">
+				</div>
+				<div class="uk-margin">
+					<input class="uk-input uk-form-width-medium" type="text" name="contraseña" placeholder="Cambiar Contraseña">
 				</div>
 				<div class="uk-margin" uk-margin>
 					<div uk-form-custom="target: true">
 						<input type="file">
-						<input class="uk-input uk-form-width-medium" type="text" placeholder="Cambiar Foto de Perfil" disabled>
+						<input class="uk-input uk-form-width-medium" type="text" name="foto" placeholder="Cambiar Foto de Perfil" disabled>
 					</div>
 					<button class="uk-button uk-button-default">Submit</button>
 				</div>

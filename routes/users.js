@@ -20,12 +20,13 @@ var upload= multer ({storage:storage})
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/profile', userController.profile); 
+router.get('/profile/:id', userController.profile); 
 router.get('/login', userController.index);
 router.post('/login', userController.processLogin);
 router.get('/register', userController.register); 
 router.post('/register', upload.single ('image'), userController.store);
-router.get('/profileEdit', userController.profileEdit);
+router.get('/profileEdit/:id', userController.profileEdit);
+router.post('/profileEdit/:id', userController.update); 
 router.post('/logout', userController.logout);
 router.get('/perfiles/:id', userController.perfiles);
 

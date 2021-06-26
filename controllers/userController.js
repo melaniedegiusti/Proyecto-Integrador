@@ -23,8 +23,40 @@ let controller = {
         
     },
     profileEdit: (req, res)=> {
-        res.render('profileEdit')
+        let primaryKey = req.params.id;
+        usuarios.findByPk(primaryKey)
+        .then(resultados =>
+            res.render('profileEdit', {resultados})
+        )
+        .catch( error => console.log(error))
     },
+    update:(req, res)=>{
+        let primaryKey = req.params.id;
+        usuarios.findByPk(primaryKey)
+        .then((users)=>{
+            // if(req.session.user == undefined){
+            //     res.redirect("/autos")
+            // } else{
+                let actualizarUsuario = {
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    mail: req.body.mail,
+                    contraseña: bcrypt.hashSync(req.body.contraseña,10),
+                    // image: req.file.filename,
+                }
+                console.log(actualizarUsuario);
+                usuarios.update(
+                    actualizarUsuario,{
+                        where: {id: primaryKey}
+                    }
+                )
+                .then(()=> res.redirect(`/users/profile/${req.params.id}`))
+            // }
+        })
+        .catch( error => console.log(error))
+    },
+
+
     register: (req, res) =>{
         if (req.session.user != undefined) {
             return res.redirect('/autos')
