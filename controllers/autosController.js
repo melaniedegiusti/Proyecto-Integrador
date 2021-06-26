@@ -113,9 +113,10 @@ let controller = {
     search: function(req, res) {
         let searchData = req.query.search;
         producto.findAll({
-            where: [
-                { nombre: {[op.like]: `%${searchData}%`}}
-            ]
+            where: [{ 
+                nombre: {[op.like]: `%${searchData}%`}, 
+                descripcion:{[op.like]: `%${searchData}%`}, 
+            }]
         })
         .then(resultados => {
             console.log(resultados)
