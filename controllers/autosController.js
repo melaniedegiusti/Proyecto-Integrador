@@ -131,16 +131,21 @@ let controller = {
     search: function(req, res) {
         let searchData = req.query.search;
         producto.findAll({
-            where: [{ 
-                nombre: {[op.like]: `%${searchData}%`}, 
-                descripcion:{[op.like]: `%${searchData}%`}, 
-            }]
+            where:{ [op.or]:[
+                {descripcion: {[op.like]:`%${searchData}%`}},
+                {nombre: {[op.like]:`%${searchData}%`}}
+             ]
+            }
         })
+        
         .then(resultados => {
             console.log(resultados)
             res.render('searchResults',{resultados})
         })
         .catch(err => console.log(err))
+
+        
+
 
     },
 };

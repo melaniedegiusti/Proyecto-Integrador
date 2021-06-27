@@ -71,16 +71,17 @@ let controller = {
             })
             .then(user => {
                 if (user==null) {
-                    errors.login = "Email es incorrecto";
-                    res.locals.error = errors;
+                    errors.login = "El email o la contrsena son incorrectos"
+                    res.locals.error = errors
                     return res.render('login')
+
                 } else if (bcrypt.compareSync(req.body.contraseña, user.contraseña) == false){
-                    errors.login = "Contraseña incorrecta";
-                    res.locals.error = errors;
+                    errors.login = "El email o la contrsena son incorrectos"
+                    res.locals.error = errors
                     return res.render('login')
+
                 } else {
                     req.session.user = user;
-
                     if(req.body.recordame != undefined){
                         res.cookie('userId', user.id, {maxAge: 1000 * 60 * 10})
                     } 
