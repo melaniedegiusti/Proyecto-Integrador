@@ -115,6 +115,14 @@ let controller = {
                // }
             })
     },
+    destroy: (req, res) =>{
+        let primaryKey = req.params.id;
+        producto.destroy({
+            where: {
+                id: primaryKey
+            }
+        })
+    },
 
     search: function(req, res) {
         let searchData = req.query.search;
