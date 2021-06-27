@@ -56,7 +56,11 @@ let controller = {
     },
     
     show: function(req, res) {   //listamos recursos
-        producto.findAll()
+        producto.findAll({
+            order: [
+                ['fecha', 'DESC'],
+            ],
+        })
             .then((resultados)=> res.render('homeLogueado', {resultados}))
             .catch((err) => console.log(err))
         //  res.render("homeLogueado", {"autosDestacados": autos, "autosComentario": autos});
