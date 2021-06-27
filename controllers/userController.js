@@ -85,7 +85,7 @@ let controller = {
                         res.cookie('userId', user.id, {maxAge: 1000 * 60 * 10})
                     } 
                 }
-                return res.redirect('/autos/homeLogueado')
+                return res.redirect('/autos')
             })
             .catch( error => console.log(error))
     },
@@ -143,23 +143,29 @@ let controller = {
     perfiles: (req, res)=> {
         let primaryKey = req.params.id
         if(req.session.user == req.params.id){
-            res.redirect(`/users/profile/${req.params.id}`)
+            res.redirect(`/users/perfiles/${req.params.id}`)
         }else{
             usuarios.findByPk(primaryKey)
             .then((user)=> {
                 db.Producto.findAll({
-                    where: {user_id: user.id}
+                    where: [{user_id: user.id}]
                 })
                 .then((producto)=>{
-                    res.render('profile', {user, producto})
-                    
+                    db.Comentario.findAll({
+                        where: [{user_id: user.id}],
+                        include: [{association: 'usuario'}],
+                        order: [['creacion', 'DESC']],
+                    }) 
+                    .then((comentario)=>{
+                        return res.render('perfiles', {producto, comentario, user})
+                    })                 
                 })
                 .catch((error)=> console.log(error))
             })
         }
-         usuarios.findByPk(primaryKey)
-        .then((resultados)=> res.render('perfiles', {resultados}))
-        .catch((err) => console.log(err))
+        //   usuarios.findByPk(primaryKey)
+        //  .then((resultados)=> res.render('perfiles', {resultados}))
+        //  .catch((err) => console.log(err))
     }
 };
 

@@ -14,6 +14,11 @@
   --header-font: 'Lato'
    
 }
+#realizados{
+  display: inline;
+  font-size: 10px;
+}
+
 #user{
   color: rgb(78, 77, 77);
 }
