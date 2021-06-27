@@ -119,13 +119,15 @@ let controller = {
                // }
             })
     },
-    destroy: (req, res) =>{
+    borrar: (req, res) =>{
         let primaryKey = req.params.id;
         producto.destroy({
             where: {
                 id: primaryKey
             }
         })
+        .then(() => res.redirect('/autos'))
+        .catch(err=> console.log(err))
     },
 
     search: function(req, res) {

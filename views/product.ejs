@@ -28,7 +28,7 @@
 				<% if (locals.nombre == resultado.usuario.nombre){ %>
 				<p class="product-detail-description">
 					<a href="/autos/edit/<%= resultado.id %>" id="editarAuto">Editar</a>
-					<form action="/autos/product/<%= resultado.id %>" method="POST">
+					<form action="/autos/borrar/<%= resultado.id %>" method="POST">
 						<input type="submit" value="Borrar"> 
 					</form>
 				</p>
