@@ -52,17 +52,7 @@ let controller = {
            .catch(err=> console.log(err))
        }
     },
-    
-    show: function(req, res) {   //listamos recursos
-        producto.findAll({
-            order: [
-                ['fecha', 'DESC'],
-            ],
-        })
-            .then((resultados)=> res.render('homeLogueado', {resultados}))
-            .catch((err) => console.log(err))
-        //  res.render("homeLogueado", {"autosDestacados": autos, "autosComentario": autos});
-    },
+
     productAdd: (req, res)=> {
         res.render('productAdd')
     },
@@ -77,9 +67,6 @@ let controller = {
             .then(()=>res.redirect('/autos'))
             .catch( (err) => console.log(err))
 
-    },
-    products: function(req, res) {
-        res.render("searchResults", {"autosid": autos});
     },
     editar: (req, res) => {
         let primaryKey = req.params.id;

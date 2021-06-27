@@ -15,11 +15,8 @@ var storage = multer.diskStorage({
 var upload= multer ({storage:storage})
 
 router.get('/', autosController.index); 
-router.get('/homeLogueado', autosController.show); 
-// router.get('/product', autosController.product); 
 router.get('/product/:id', autosController.product); //: ruta parametrizada, id viaja en la url. Obligatorio
 router.post('/product/:id', autosController.comentarioAdd);
-//router.post('/product/:id', autosController.destroy); //no se puede usar la misma creo
 router.get('/productAdd', autosController.productAdd);
 router.post('/productAdd', upload.single ('image'), autosController.store);
 router.get('/searchResults', autosController.search); 
