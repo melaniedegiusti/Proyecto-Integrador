@@ -26,7 +26,9 @@ let controller = {
                     },
                     include:[{association: 'usuario'},
                 ],
-
+                 order: [
+                     ['creacion', 'DESC'],
+                 ],
                 })
             .then((comentarios)=>{
                 //res.send({resultado,comentarios})
