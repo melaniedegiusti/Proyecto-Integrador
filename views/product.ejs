@@ -25,9 +25,11 @@
 
 			<div class="d-flex align-items-center">
 				<h2 class="products-title"> <%= resultado.nombre %> </h2> 
+				<% if (locals.nombre == resultado.usuario.nombre){ %>
 				<p class="product-detail-description">
 					<a href="/autos/edit/<%= resultado.id %>" id="editarAuto">Editar</a>
 				</p>
+				<% } %>
 			</div>
 			<div class="product-detail">
 				<div class="row">

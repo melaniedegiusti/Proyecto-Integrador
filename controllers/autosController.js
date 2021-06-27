@@ -5,7 +5,11 @@ const op = db.Sequelize.Op;
 
 let controller = {
     index: function(req, res) {
-         producto.findAll()
+         producto.findAll({
+             order: [
+                 ['fecha', 'DESC'],
+             ],
+         })
             .then((resultados)=> res.render('home', {resultados}))
             .catch((err) => console.log(err))
         // res.render("home", {"autosDestacados": autos, "autosComentario": autos});
