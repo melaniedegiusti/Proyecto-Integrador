@@ -106,7 +106,12 @@ let controller = {
 
             return res.render('register')
 
-        } else {
+        } else if(req.body.contraseña.length < 4){
+            errors.register = "Contraseña debe tener mas de 3 caracteres"
+            res.locals.errors = errors
+
+            return res.render('register')
+        }else {
             usuarios.findOne({
                 where: [{mail: req.body.mail}]
             })
