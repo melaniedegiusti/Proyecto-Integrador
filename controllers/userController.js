@@ -60,9 +60,7 @@ let controller = {
         }
         
     },
-    // login: function (req, res) {
-    //     res.render('login')
-    // },
+    
     processLogin:(req, res) =>{
         let errors = {}; //variable para guardar errores
         
@@ -169,9 +167,6 @@ let controller = {
                 .catch((error)=> console.log(error))
             })
         }
-        //   usuarios.findByPk(primaryKey)
-        //  .then((resultados)=> res.render('perfiles', {resultados}))
-        //  .catch((err) => console.log(err))
     }
 };
 

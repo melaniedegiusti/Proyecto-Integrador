@@ -56,6 +56,7 @@ let controller = {
     productAdd: (req, res)=> {
         res.render('productAdd')
     },
+
     store: (req, res)=> {
         let auto={
             nombre: req.body.nombre,
@@ -66,8 +67,8 @@ let controller = {
         producto.create(auto)
             .then(()=>res.redirect('/autos'))
             .catch( (err) => console.log(err))
-
     },
+
     editar: (req, res) => {
         let primaryKey = req.params.id;
         producto.findByPk(primaryKey)
@@ -77,6 +78,7 @@ let controller = {
                         .catch(err => console.log(err))           
             })
     },
+
     editarPost: (req, res) => {
         let primaryKey = req.params.id;
         producto.findByPk(primaryKey)
@@ -92,6 +94,7 @@ let controller = {
                     res.redirect(`/autos/product/${req.params.id}`)              
             })
     },
+    
     borrar: (req, res) =>{
         let primaryKey = req.params.id;
         producto.destroy({

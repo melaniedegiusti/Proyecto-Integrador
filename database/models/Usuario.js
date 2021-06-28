@@ -16,9 +16,6 @@ module.exports = (sequelize, dataTypes)=>{
         mail:{
             type: dataTypes.STRING
         },
-        // telefono: {
-        //     type: dataTypes.INTEGER
-        // },
         
         fecha: {
             type: dataTypes.DATE
@@ -29,6 +26,9 @@ module.exports = (sequelize, dataTypes)=>{
         },
         image: {
             type: dataTypes.STRING
+        },
+        update:{
+            type: dataTypes.DATE
         },
        
     };
@@ -41,13 +41,13 @@ module.exports = (sequelize, dataTypes)=>{
     const Usuario = sequelize.define(alias, cols, config)
 
     Usuario.associate = (models)=>{
-        //relacion uno
+        //relacion uno con usuario
         Usuario.hasMany(models.Producto, {
             as: 'producto', //nombre que le ponemos nosotros 
             foreignKey: 'user_id'
         })
         Usuario.hasMany(models.Comentario, {
-            as: 'comentario', //nombre que le ponemos nosotros 
+            as: 'comentario',  
             foreignKey: 'user_id'
         })
     }

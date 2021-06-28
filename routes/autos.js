@@ -28,9 +28,4 @@ router.post('/borrar/:id', autosController.borrar);
 
 
 
-// product add
-// router.get('/create', autosController.add); 
-// router.post('/create', autosController.store);
-
-
 module.exports = router;

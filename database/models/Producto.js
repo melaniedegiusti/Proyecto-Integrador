@@ -24,6 +24,9 @@ module.exports = (sequelize, dataTypes)=>{
         user_id :{
             type: dataTypes.INTEGER
         },
+        update: {
+            type: dataTypes.DATE
+        }
 
     };
     let config = {
@@ -35,14 +38,14 @@ module.exports = (sequelize, dataTypes)=>{
     const Producto = sequelize.define(alias, cols, config)
 
     Producto.associate = (models)=>{
-        //relacion muchos
+        //relacion muchos con usuario
         Producto.belongsTo(models.Usuario, {
             as: 'usuario', 
             foreignKey: 'user_id'
         })    
         //relacion uno
         Producto.hasMany(models.Comentario, {
-            as: 'comentario', //nombre que le ponemos nosotros 
+            as: 'comentario', 
             foreignKey: 'product_id'
         })
     }
