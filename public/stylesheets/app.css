@@ -31,6 +31,7 @@
 font-size: 20px;
 color: black;
 list-style: circle;
+padding: 10px;
 }
 #nombres{
   font-size: 20px;
@@ -306,7 +307,7 @@ hr {
 
 
 .products-title {
-  font-size: 2.4em;
+  font-size: 2em;
   font-weight: 400;
   color: var(--dark-blue);
   font-weight: bold;

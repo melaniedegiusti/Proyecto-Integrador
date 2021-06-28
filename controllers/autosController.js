@@ -7,7 +7,7 @@ let controller = {
     index: function(req, res) {
          producto.findAll({
             include: [{association: 'comentario'}],
-            order: [['fecha', 'DESC']],
+            order: [['id', 'DESC']],
          })
             .then((resultados)=> res.render('home', {resultados}))
             .catch((err) => console.log(err))
