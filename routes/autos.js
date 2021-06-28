@@ -20,8 +20,8 @@ router.post('/product/:id', autosController.comentarioAdd);
 router.get('/productAdd', autosController.productAdd);
 router.post('/productAdd', upload.single ('image'), autosController.store);
 router.get('/searchResults', autosController.search); 
-router.get('/edit/:id', autosController.editar); //edit ejs
-router.post('/edit/:id', autosController.editarPost); //edit ejs
+router.get('/edit/:id', autosController.editar); 
+router.post('/edit/:id', autosController.editarPost); 
 router.post('/borrar/:id', autosController.borrar);
 
 

@@ -70,38 +70,26 @@ let controller = {
     },
     editar: (req, res) => {
         let primaryKey = req.params.id;
-        db.Producto.findByPk(primaryKey)
+        producto.findByPk(primaryKey)
             .then((auto) => {
-                // if (req.session.user == undefined) {
-                //     res.redirect(`/home${req.params.id}`)
-                 //}
-                //else if (auto.usuarios_id == req.session.user.id) {
-                    db.Producto.findByPk(primaryKey)
-                        //.then(resultados => res.send( resultados ))
+                    producto.findByPk(primaryKey)
                         .then(resultados => res.render("edit", { resultados }))
-                        .catch(err => console.log(err))
-               // }
-               // else {
-               //     res.redirect(`/home${req.params.id}`)
-              //  }
+                        .catch(err => console.log(err))           
             })
     },
     editarPost: (req, res) => {
         let primaryKey = req.params.id;
-        db.Producto.findByPk(primaryKey)
+        producto.findByPk(primaryKey)
             .then((auto) => {
-               // if (req.session.user == undefined) {
-                //    res.redirect(`/productos/busqueda/${req.params.id}`)
-                //}
-                //else if (auto.usuarios_id == req.session.user.id) {
-                    let actualizarauto = req.body
-                    db.Producto.update(actualizarauto, { where: { id: primaryKey } })
+                    let actualizarauto = {
+                        nombre: req.body.nombre,
+                        descripcion: req.body.descripcion,
+                    }    
+                    producto.update(actualizarauto, { where: { id: primaryKey } })
                         .then(() => res.redirect(`/autos/product/${req.params.id}`))
                         .catch(err => console.log(err))
-               // }
-                //else {
-                    res.redirect(`/autos/product/${req.params.id}`)
-               // }
+               
+                    res.redirect(`/autos/product/${req.params.id}`)              
             })
     },
     borrar: (req, res) =>{

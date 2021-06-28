@@ -28,14 +28,7 @@ module.exports = (sequelize, dataTypes)=>{
 
     const Comentario = sequelize.define(alias, cols, config)
 
-    // Comentario.associate = (models)=> {
-    //     Comentario.belongsToMany(models.Producto, {
-    //         as: 'producto',
-    //         through: 'comentario_id', // nose si esta bien
-    //         otherKey: 'product_id',
-    //         timestamps: false,
-    //     })
-    // }
+   
     Comentario.associate = (models) => {
         //relacion muchos
         Comentario.belongsTo(models.Producto, {
