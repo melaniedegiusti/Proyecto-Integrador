@@ -17,6 +17,18 @@ let controller = {
        } 
     },
     
+    // editar: (req, res) => {
+    //     let primaryKey = req.params.id;
+    //     producto.findByPk(primaryKey)
+    //         .then((auto) => {
+    //                 producto.findByPk(primaryKey)
+    //                     .then(resultados => res.render("edit", { resultados }))
+    //                     .catch(err => console.log(err))           
+    //         })
+    // },
+
+
+
     profileEdit: (req, res)=> {
         let primaryKey = req.params.id;
         usuarios.findByPk(primaryKey)
